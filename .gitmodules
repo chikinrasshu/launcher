@@ -1,0 +1,6 @@
+[submodule "external/chk_core"]
+	path = external/chk_core
+	url = https://github.com/chikinrasshu/core
+[submodule "external/chk_win"]
+	path = external/chk_win
+	url = https://github.com/chikinrasshu/win
