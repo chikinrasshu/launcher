@@ -1,16 +1,19 @@
 #pragma once
 
 #include <chk/core/types.h>
+#include <chk/renderer/renderer.h>
 #include <chk/win/win.h>
 
 typedef struct LauncherConfig {
-    WinConfig win;
+    WinConfig      win;
+    RendererConfig renderer;
 } LauncherConfig;
 
 bool chk_launcher_config_get_default(LauncherConfig* c);
 
 typedef struct Launcher {
-    Win win;
+    Win      win;
+    Renderer renderer;
 } Launcher;
 
 bool chk_launcher_create(Launcher* l, LauncherConfig* c);

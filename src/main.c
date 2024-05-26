@@ -10,6 +10,11 @@ CHK_WIN_ON_UPDATE(on_update) {
         chk_warn("Launcher", "l was NULL");
         return;
     }
+
+    if (l->win.changed.dark) {
+        chk_info_f("Launcher", "Dark mode changed to %s",
+                   l->win.state.dark ? "YES" : "NO");
+    }
 }
 
 CHK_WIN_ON_RENDER(on_render) {
@@ -18,6 +23,16 @@ CHK_WIN_ON_RENDER(on_render) {
         chk_warn("Launcher", "l was NULL");
         return;
     }
+
+    chk_renderer_begin(&l->renderer);
+
+    // Do some rendering...
+    chk_renderer_clear(&l->renderer, (RGBA){0.1f, 0.2f, 0.3f, 1.0f});
+
+    chk_renderer_line(&l->renderer, (V2){32.0f, 24.0f}, (V2){64.0f, 96.0f},
+                      (RGBA){0.6f, 0.5f, 0.4f, 1.0f});
+
+    chk_renderer_end(&l->renderer);
 }
 
 CHK_WIN_ON_DBG_UI(on_dbg_ui) {

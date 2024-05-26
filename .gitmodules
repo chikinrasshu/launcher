@@ -4,3 +4,6 @@
 [submodule "external/chk_win"]
 	path = external/chk_win
 	url = https://github.com/chikinrasshu/win
+[submodule "external/chk_renderer"]
+	path = external/chk_renderer
+	url = https://github.com/chikinrasshu/renderer
